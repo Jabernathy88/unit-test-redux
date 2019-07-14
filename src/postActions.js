@@ -1,10 +1,10 @@
 // import axios from 'axios';
 
-function getPosts() {
-  return fetch("/posts")
-    .then(handleErrors)
-    .then(res => res.json());
-}
+// function getPosts() {
+//   return fetch("/posts")
+//     .then(handleErrors)
+//     .then(res => res.json());
+// }
 
 function fakeGetPosts() {
   return new Promise(resolve => {
@@ -47,12 +47,12 @@ export function fetchPosts() {
 }
 
 // handle HTTP errors // TODO: REMOVE
-function handleErrors(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-}
+// function handleErrors(response) {
+//   if (!response.ok) {
+//     throw Error(response.statusText);
+//   }
+//   return response;
+// }
 
 export const FETCH_POSTS_BEGIN = "FETCH_posts_BEGIN";
 export const FETCH_POSTS_SUCCESS = "FETCH_posts_SUCCESS";
