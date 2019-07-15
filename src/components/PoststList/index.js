@@ -4,12 +4,13 @@ import { fetchPosts } from '../../postActions';
 
 export class PostsList extends Component {
   componentDidMount() {
-    this.props.dispatch(fetchPosts());
+    if (this.props.dispatch) {
+      this.props.dispatch(fetchPosts());
+    }
   }
 
   render() {
     const { error, loading, posts } = this.props;
-    console.log(this.props)
 
     if (error) {
       return <div>Error: {error.message}</div>
@@ -19,7 +20,7 @@ export class PostsList extends Component {
     }
 
     return (
-      <div>
+      <div className="posts-list-container">
         <h4>Hello from PostsList</h4>
         {posts && posts.map(post => (
           <div key={post.id}>
@@ -37,5 +38,13 @@ const mapStateToProps = state => ({
   loading: state.posts.loading,
   error: state.posts.error
 })
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     fetchPosts: () => dispatch({ type: 'INCREMENT' }),
+//     decrement: () => dispatch({ type: 'DECREMENT' }),
+//     reset: () => dispatch({ type: 'RESET' })
+//   }
+// }
 
 export default connect(mapStateToProps)(PostsList);

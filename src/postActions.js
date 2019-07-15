@@ -1,5 +1,3 @@
-// import axios from 'axios';
-
 // function getPosts() {
 //   return fetch("/posts")
 //     .then(handleErrors)
@@ -54,9 +52,9 @@ export function fetchPosts() {
 //   return response;
 // }
 
-export const FETCH_POSTS_BEGIN = "FETCH_posts_BEGIN";
-export const FETCH_POSTS_SUCCESS = "FETCH_posts_SUCCESS";
-export const FETCH_POSTS_FAILURE = "FETCH_posts_FAILRE";
+export const FETCH_POSTS_BEGIN = "FETCH_POSTS_BEGIN";
+export const FETCH_POSTS_SUCCESS = "FETCH_POSTS_SUCCESS";
+export const FETCH_POSTS_FAILURE = "FETCH_POSTS_FAILRE";
 
 export const fetchPostsBegin = () => ({
   type: FETCH_POSTS_BEGIN
